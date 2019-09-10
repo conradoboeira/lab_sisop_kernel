@@ -22,10 +22,10 @@ asmlinkage long sys_listProcessInfo(long pid, const char __user *buf, int size) 
 					(long)proces->rt_priority, 
 					(long)proces->static_prio, (long)proces->normal_prio);
 			bufsz = strlen(kbuf)+1;
-
+			printk("%d", size);
 			/* User buffer is too small */
 			if(bufsz > size){
-				return -1;
+				return -3;
 			}
 
 			/* success */
