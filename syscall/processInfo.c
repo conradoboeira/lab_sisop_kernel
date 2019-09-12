@@ -25,7 +25,7 @@ asmlinkage long sys_listProcessInfo(long pid, const char __user *buf, int size) 
 			printk("%d", size);
 			/* User buffer is too small */
 			if(bufsz > size){
-				return -3;
+				return -1;
 			}
 
 			/* success */
